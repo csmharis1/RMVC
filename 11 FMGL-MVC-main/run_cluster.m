@@ -1,12 +1,12 @@
 
 warning off
-
+clear all
 clc
 addpath([pwd, '/my_tools']);
 addpath([pwd, '/dataset']);
 anchor_rate =0.7;% the anchor rate to all samples
 % %%======MSRC=================%%
-% load  MSRC;  %Read database
+load  MSRC;  %Read database
 gt = Y;    % the grount truth for testing
 cls_num = length(unique(gt)); % the number of clusters
 nV = length(X); %Get the number of views
