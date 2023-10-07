@@ -185,7 +185,10 @@ end;
 %SS0 = [zeros(n),SS;SS',zeros(m)];
 %SS0 = [sparse(n,n),SS;SS',sparse(m,m)]; % slow to allocate memory
 SS0=sparse(n+m,n+m); SS0(1:n,n+1:end)=SS; SS0(n+1:end,1:n)=SS';
-[clusternum, y]=graphconncomp(SS0);
+x = full(SS0);
+x = graph (SS0);
+y= conncomp(x);
+% [clusternum, y]=graphconncomp(SS0);
 y1=y(1:n)';
 y2=y(n+1:end)';
 
